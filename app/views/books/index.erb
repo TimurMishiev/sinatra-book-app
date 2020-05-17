@@ -1,0 +1,19 @@
+<body>
+  <h1>Books </h1>
+  <h2> Welcome:
+    <%=current_user.name.capitalize %>
+    </h2>
+
+  <%@books.each do |books|%>
+  <li> <a href="/books/<%=book.id%>"><%= book.name %></a></li>
+  <% end %>
+  <br/>
+
+  <div>
+
+    <% if logged_in? %>
+    <a href="/books/new">Add a new book</a>
+    <% end %>
+  </div>
+  <a href="/logout">Log out</a>
+</body>
