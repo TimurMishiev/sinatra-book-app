@@ -14,7 +14,7 @@ class BooksController <  ApplicationController
 
   post '/books' do
     if !params[:book_name].empty?
-      book = Book.find_or_create_by(name: [:book_name], author: params[:book_author], genre: params[:book_genre])
+      book = Book.find_or_create_by(name: params[:book_name], author: params[:book_author], genre: params[:book_genre])
       redirect "/books/#{book.id}"
     else 
       redirect '/books/new'

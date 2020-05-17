@@ -4,7 +4,7 @@
     <%=current_user.name.capitalize %>
     </h2>
 
-  <%@books.each do |books|%>
+  <%@books.each do |book|%>
   <li> <a href="/books/<%=book.id%>"><%= book.name %></a></li>
   <% end %>
   <br/>
