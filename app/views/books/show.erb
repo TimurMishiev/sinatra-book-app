@@ -1,0 +1,25 @@
+
+<h1> <%= @book.name%></h1>
+<h2> <%= @book.author%></h2>
+<h3> <%= @book.genre%></h2>
+</p>
+</font>
+<h3> Book Reviews </h3>
+<% @book.reviews.each do |review| %>
+<p>
+  <%=review.content %> <br>
+  <font color="teal">Book review:</font><%= review.book_id%><br>
+
+  <% if review.user %>
+  <font color="teal"> Written by:</font><%= review.user.name.capitalize%><br>
+
+  <% if logged_in? and review.user == current_user %>
+  <a href="/reviews/<%=review.id%>/edit">Edit review</a><br>
+  <a href="/reviews/<%=review.id%>/delete">Delete review</a>
+  <% end %>
+  <% end %>
+</p>
+<% end %>
+<p><a href="/reviews/<%=@book.id%>/new">Add review</a></p>
+<p><a href="/book"> Back to books page </a></p>
+<a href="/logout">Log out</a>
