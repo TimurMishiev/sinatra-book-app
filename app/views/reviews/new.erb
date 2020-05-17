@@ -1,0 +1,15 @@
+<h4> Add a review</h4>
+  <form action="/reviews/<%=@book.id%>" method="POST">
+  <textarea name="content" rows=
+  "9" cols="60"></textarea>
+
+  <p> Rate this book:
+  <select name="review">
+  <option selected="selected" value="poor">poor</option>
+  <option selected="selected" value="good">good</option>
+  <option selected="selected" value="excellent">excellent</option>
+  </select>
+   </p>
+   <p><input type="submit" value="Add Comment"></p>
+ </form>
+   <a href="/">Home</a>
