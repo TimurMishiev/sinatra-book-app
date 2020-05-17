@@ -9,48 +9,45 @@ class UsersController < ApplicationController
   get '/signup' do
     if logged_in?
       redirect '/books'
-    else 
-      erb : 'users/signup'
-    end 
-  end 
-
+    else
+    erb :'users/signup'
+  end
+  end
+  
   post '/signup' do
     if User.find_by(name: params[:name])
-       redirect '/signup'
+      #flash[:alert] = "User with this name already exist, please go to Log in page"
+      redirect'/signup'
     elsif params[:name].empty? && params[:password].empty?
-       redirect '/signup'
-    end 
+      #flash[:alert] = "Username and password are required"
+      redirect '/signup'
+    end
       @user = User.new(params)
-    if @user.save
-      sessions[:user_id]= @user.id
-      redirect '/books'
-    end 
-  end   
-
-  
-
-
-
-  # the purpouse of  GET login route is to render the login page (form)
+    if  @user.save
+      session[:user_id]= @user.id
+    redirect '/books'
+   end
+  end
 
   get '/login' do
     if !logged_in?
        erb :'users/login'
     else
-       redirect'/cars'
+       redirect'/books'
     end
   end
   
-  #the purpouse of POST login route is to recieve  the login form.
-  #find a user, and log the user in (create a session)
+
   post '/login' do
-    user = User.find_by(:name params[:name])
-    if user && user.authenticate(params[:password])
-      sesions[:user_id] = user.id
+    user = User.find_by(:name => params[:name])
+     if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect '/books'
-    end 
-     redirect '/login'
-  end 
+     end
+      #flash[:alert] = "Username and password are required or not exist please go to Sign up page"
+      redirect '/login'
+     end
+
 
 
 end 
