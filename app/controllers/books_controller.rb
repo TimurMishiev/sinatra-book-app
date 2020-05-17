@@ -7,17 +7,17 @@ class BooksController <  ApplicationController
 
   get '/books/new' do
      if logged_in?
-       erb :'cars/new'
+       erb :'books/new'
      else redirect '/login'
     end 
   end 
 
   post '/books' do
-    if !params[:car_name].empty?
+    if !params[:book_name].empty?
       book = Book.find_or_create_by(name: [:book_name], author: params[:book_author], genre: params[:book_genre])
       redirect "/books/#{book.id}"
     else 
-      redirect '/cars/new'
+      redirect '/books/new'
     end 
   end 
 
