@@ -6,6 +6,6 @@ end
 
 use Rack::MethodOverride
 use UsersController
-use CarsController
+use BooksController
 use ReviewsController
 run ApplicationController
