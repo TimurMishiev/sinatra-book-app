@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
       redirect "/reviews/#{@book.id}/new"
     else 
       Review.create(content: params[:content], book_id: params[:book_id], user_id: current_user.id)
-      redirect '/books/1'
+      redirect '/books'
     end 
   end 
 
@@ -45,5 +45,5 @@ class ReviewsController < ApplicationController
        redirect '/books'
     end
   end
-  
+
 end 

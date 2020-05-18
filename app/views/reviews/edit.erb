@@ -1,0 +1,14 @@
+<h1><%=@review.book.name %></h1>
+<h3> Edit review</h3>
+
+<p>
+<form action="/reviews/<%=@review.id%>/edit" method="POST">
+<textarea name="content" rows=
+"9" cols="60"> <%=@review.content%> </textarea>
+
+
+<p><input type="submit" value="Submit"></p>
+
+</form>
+</p>
+ <a href="/">Home</a>
