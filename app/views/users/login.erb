@@ -1,12 +1,16 @@
 <h1>LOG IN </h1>
 
-<font color="blue">
 <h2>
+<font color="red">
+<p style="font-size:16px">
 <% if flash.has?(:alert) %>
 <%= flash[:alert] %>
 <% end %>
+</p>
+</font>
 </h2>
 
+<font color="grey">
 <form action="/login" method="post">
 
 <label for="username">USERNAME: </label>
@@ -22,6 +26,6 @@
 </font>
 
 </form>
-
+<br/>
 <p>Or visit <a href="/signup">SIGN UP</a> page</p>
  <p> Or go back to <a href="/">HOME</a> page </p>

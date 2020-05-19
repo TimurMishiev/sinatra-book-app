@@ -5,7 +5,7 @@
   <h2> WELCOME:
     <%=current_user.name.capitalize %>
     </h2>
-
+  
   <%@books.each do |book|%>
   <li><br><a href="/books/<%=book.id%>"><%= book.name %></a></li> 
   <% end %>

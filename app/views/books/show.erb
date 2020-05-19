@@ -10,7 +10,7 @@
 <% @book.reviews.each do |review| %>
 <p>
   <%=review.content %> <br>
-  <font color="teal">Book review:</font><%= review.book_id%><br>
+  
 
   <% if review.user %>
   <font color="teal"> Written by:</font><%= review.user.name.capitalize%><br>
