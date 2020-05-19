@@ -1,12 +1,16 @@
 <h1>SIGN UP</h1>
 
-<font color="blue">
+
 <h2>
+<font color="red">
+<p style="font-size:16px">
 <% if flash.has?(:alert) %>
 <%= flash[:alert] %>
 <% end %>
+</p>
+</font>
 </h2>
-
+<font color="grey">
 <form action="signup" method="post">
 
 <label for="username">USERNAME: </lable>

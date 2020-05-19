@@ -26,7 +26,6 @@ class ReviewsController < ApplicationController
     if @review &&  @review.user == current_user
        erb :'reviews/edit'
     else
-       flash[:alert] = 'You must be looged in as a different user to access that review'
         redirect '/books'
     end
   end

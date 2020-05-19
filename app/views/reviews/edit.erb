@@ -1,14 +1,16 @@
 <!DOCTYPE html>
   <html>
-  <style>
-    h1 {text-align:center;}
-    </style>
-
+  <p><font color="grey">
     <h1><%=@review.book.name %></h1>
+    </font>
     <h2>
-  <% if flash.has?(:alert) %>
-  <%= flash[:alert] %>
- <% end %>
+    <font color="red">
+    <p style="font-size:20px">
+    <% if flash.has?(:alert) %>
+    <%= flash[:alert] %>
+    <% end %>
+    </p>
+    </font>
   </h2>
 <h3> EDIT REVIEW</h3>
 
