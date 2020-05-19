@@ -1,6 +1,11 @@
-<h1>Sign Up</h1>
+<h1>SIGN UP</h1>
 
 <font color="blue">
+<h2>
+<% if flash.has?(:alert) %>
+<%= flash[:alert] %>
+<% end %>
+</h2>
 
 <form action="signup" method="post">
 
@@ -13,8 +18,10 @@
 
 <input type="password" name="password" placeholder ="password"   id="password"><br>
 
-<input type="submit" value="Sign Up">
+<input type="submit" value="SIGN UP">
 
 </font>
 
 </form>
+<p>Or visit <a href="/login">Log in</a> page</p>
+<p> Or go back to <a href="/">Home</a> page </p>
