@@ -1,5 +1,16 @@
-<h1><%=@review.book.name %></h1>
-<h3> Edit review</h3>
+<!DOCTYPE html>
+  <html>
+  <style>
+    h1 {text-align:center;}
+    </style>
+
+    <h1><%=@review.book.name %></h1>
+    <h2>
+  <% if flash.has?(:alert) %>
+  <%= flash[:alert] %>
+ <% end %>
+  </h2>
+<h3> EDIT REVIEW</h3>
 
 <p>
 <form action="/reviews/<%=@review.id%>/edit" method="POST">
@@ -11,4 +22,4 @@
 
 </form>
 </p>
- <a href="/">Home</a>
+ <a href="/">HOME</a>

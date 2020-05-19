@@ -14,10 +14,10 @@ class ReviewsController < ApplicationController
   post '/reviews/:book_id' do
     @book = Book.find_by_id(params[:id])
     if params[:content].empty?
-      redirect "/reviews/#{@book.id}/new"
+      redirect "/reviews/:id/new"
     else 
       Review.create(content: params[:content], book_id: params[:book_id], user_id: current_user.id)
-      redirect '/books'
+      redirect "/books/#{book.id}"
     end 
   end 
 
@@ -26,7 +26,8 @@ class ReviewsController < ApplicationController
     if @review && @review.user == current_user
       erb :'reviews/edit'
     else
-      redirect "reviews/#{@book.id}"
+      @book = Book.find_by_id(params[:id])
+      redirect "reviews/#{book.id}/new"
     end 
   end 
 
@@ -34,7 +35,7 @@ class ReviewsController < ApplicationController
     @review = Review.find_by_id(params[:id])
     if @review.user ==current_user
       @review.update(content: params[:content])
-      redirect "/books"
+      redirect "/books/#{book.id}"
     end
   end 
 

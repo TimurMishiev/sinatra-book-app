@@ -1,11 +1,22 @@
+<h2>
+  <% if flash.has?(:alert) %>
+  <%= flash[:alert] %>
+ <% end %>
+  </h2>
+  
+  
+<font color="grey">
 <h2> <%= @book.name %></h2>
-<h3> <%=@book.author %></h3>
+<h3><i><%=@book.author %></i></h3>
+
 </p>
-<h4> Add a review</h4>
+
+<font color="black">
+<h4> ADD A REVIEW</h4>
 <form action="/reviews/<%=@book.id%>" method="post">
 <textarea name="content" rows=
 "9" cols="60"></textarea>
 
-<p><input type="submit" value="Add Comment"></p>
+<p><input type="submit" value="ADD A REVIEW"></p>
  </form>
-   <a href="/">Home</a>
+   <a href="/">HOME</a>

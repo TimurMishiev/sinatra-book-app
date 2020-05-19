@@ -1,20 +1,22 @@
+
+
 <body>
-  <h1>Books </h1>
-  <h2> Welcome:
+  <h1>BOOKS </h1>
+  <h2> WELCOME:
     <%=current_user.name.capitalize %>
     </h2>
 
   <%@books.each do |book|%>
-  <li> <a href="/books/<%=book.id%>"><%= book.name %></a></li> 
+  <li><br><a href="/books/<%=book.id%>"><%= book.name %></a></li> 
   <% end %>
   <br/>
-
+  <br/>
   <div>
 
     <% if logged_in? %>
-    <a href="/books/new">Add a new book</a>
+    <a href="/books/new">ADD A BOOK</a>
     <% end %>
   </div>
   <br>
-  <a href="/logout">Log out</a>
+  <a href="/logout">LOG OUT</a>
 </body>

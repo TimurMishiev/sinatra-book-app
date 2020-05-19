@@ -1,10 +1,12 @@
 
+<p><font color="grey">
 <h1> <%= @book.name%></h1>
-<h2> <%= @book.author%></h2>
-<h3> <%= @book.genre%></h2>
+<h2><i><%= @book.author%></i></h2>
+
 </p>
 </font>
-<h3> Book Reviews </h3>
+<h3> BOOK REVIEWS </h3>
+<br/>
 <% @book.reviews.each do |review| %>
 <p>
   <%=review.content %> <br>
@@ -20,6 +22,6 @@
   <% end %>
 </p>
 <% end %>
-<p><a href="/reviews/<%=@book.id%>/new">Add review</a></p>
-<p><a href="/books"> Back to books page </a></p>
-<a href="/logout">Log out</a>
+<p><a href="/reviews/<%=@book.id%>/new">ADD A REVIEW</a></p>
+<p><a href="/books"> BACK TO BOOKS </a></p>
+<a href="/logout">LOG OUT</a>
