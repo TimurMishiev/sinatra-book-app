@@ -19,10 +19,10 @@ class UsersController < ApplicationController
   
   post '/signup' do
     if User.find_by(name: params[:name])
-      flash[:alert] = "User with this name already exist, please go to Log in page"
+      #flash[:alert] = "User with this name already exist, please go to Log in page"
       redirect'/signup'
     elsif params[:name].empty? && params[:password].empty?
-      flash[:alert] = "Username and password are required"
+      #flash[:alert] = "Username and password are required"
       redirect '/signup'
     end
       @user = User.new(params)
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect '/books'
      end
-      flash[:alert] = "Username and password are required or don't exist please go to Sign up page"
+      #flash[:alert] = "Username and password are required or don't exist please go to Sign up page"
       redirect '/login'
      end
 
